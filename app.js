@@ -20,6 +20,10 @@ app.use(Express.static(Path.join(__dirname, "public")));
 
 app.use("*", (req, res, next) => {
   const vectors = {
+    method: req.method,
+    route: req.route,
+    baseUrl: req.baseUrl,
+    ip: req.ip,
     headers: req.headers,
     body: req.body,
     query: req.query,
